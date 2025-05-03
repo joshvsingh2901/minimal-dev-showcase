@@ -12,9 +12,9 @@ interface ProjectItem {
 
 const projects: ProjectItem[] = [
   {
-    title: "The Jewel Thief",
-    description: "A stealth adventure game where players take on the role of a master jewel thief infiltrating high-security locations. Features complex puzzle-solving mechanics, advanced AI security systems, and strategic gameplay.",
-    tags: ["Game Development", "Python", "Pygame", "AI Systems"],
+    title: "Phantom Syndicate",
+    description: "An exciting JavaFX adventure game featuring three distinct minigames tied together with a storyline about a son's quest to retrieve his family's ruby heirloom. Includes puzzle-solving, action sequences, and a boss fight with custom UI elements and immersive audio.",
+    tags: ["Java", "JavaFX", "Game Development", "OOP", "Animation"],
     github: "https://github.com/joshvsingh2901/The-Jewel-Thief",
   },
   {
