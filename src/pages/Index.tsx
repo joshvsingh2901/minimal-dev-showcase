@@ -40,9 +40,11 @@ const Index = () => {
     // Add parallax effect to elements with parallax class
     const handleParallax = () => {
       document.querySelectorAll('.parallax').forEach(element => {
+        // Properly type the element as HTMLElement to access style property
+        const htmlElement = element as HTMLElement;
         const speed = parseFloat(element.getAttribute('data-speed') || '0.1');
         const yPos = window.scrollY * speed;
-        element.style.transform = `translateY(${yPos}px)`;
+        htmlElement.style.transform = `translateY(${yPos}px)`;
       });
     };
 
