@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,8 +38,8 @@ const Header = () => {
         </a>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:block">
-          <ul className="flex items-center space-x-8">
+        <nav className="hidden md:flex md:items-center">
+          <ul className="flex items-center space-x-8 mr-4">
             <li>
               <a href="#about" className="text-sm hover:text-accent transition-colors">About</a>
             </li>
@@ -60,16 +61,20 @@ const Header = () => {
               </a>
             </li>
           </ul>
+          <ThemeToggle />
         </nav>
         
         {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden text-foreground" 
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center md:hidden">
+          <ThemeToggle />
+          <button 
+            className="text-foreground ml-4" 
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
       
       {/* Mobile Navigation */}
