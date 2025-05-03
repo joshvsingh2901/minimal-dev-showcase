@@ -12,6 +12,12 @@ interface ProjectItem {
 
 const projects: ProjectItem[] = [
   {
+    title: "The Jewel Thief",
+    description: "A stealth adventure game where players take on the role of a master jewel thief infiltrating high-security locations. Features complex puzzle-solving mechanics, advanced AI security systems, and strategic gameplay.",
+    tags: ["Game Development", "Python", "Pygame", "AI Systems"],
+    github: "https://github.com/joshvsingh2901/The-Jewel-Thief",
+  },
+  {
     title: "Website Development Projects",
     description: "Delivered functional websites for three small businesses using Wix and Shopify platforms. Implemented responsive designs, e-commerce functionality, and custom branding elements to meet client requirements.",
     tags: ["Wix", "Shopify", "Web Development", "UI/UX Design"],
