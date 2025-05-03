@@ -1,5 +1,5 @@
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import About from "../components/About";
@@ -8,11 +8,17 @@ import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import LoadingScreen from "../components/LoadingScreen";
 
 const Index = () => {
+  const [pageLoaded, setPageLoaded] = useState(false);
+
   useEffect(() => {
     // Update document title
     document.title = "Joshveer Singh Chhabra | Portfolio";
+
+    // Mark page as loaded
+    setPageLoaded(true);
 
     // Intersection Observer for fade-in animations
     const observer = new IntersectionObserver(
@@ -31,13 +37,26 @@ const Index = () => {
       observer.observe(section);
     });
 
+    // Add parallax effect to elements with parallax class
+    const handleParallax = () => {
+      document.querySelectorAll('.parallax').forEach(element => {
+        const speed = parseFloat(element.getAttribute('data-speed') || '0.1');
+        const yPos = window.scrollY * speed;
+        element.style.transform = `translateY(${yPos}px)`;
+      });
+    };
+
+    window.addEventListener('scroll', handleParallax);
+
     return () => {
       observer.disconnect();
+      window.removeEventListener('scroll', handleParallax);
     };
   }, []);
 
   return (
     <>
+      <LoadingScreen />
       <Header />
       <main>
         <Hero />
@@ -63,6 +82,15 @@ const Index = () => {
         </div>
       </main>
       <Footer />
+
+      {/* Floating elements for visual interest */}
+      {pageLoaded && (
+        <>
+          <div className="fixed top-[10%] left-[5%] w-24 h-24 rounded-full bg-accent/5 animate-float" style={{animationDelay: '0.5s'}}></div>
+          <div className="fixed top-[40%] right-[7%] w-32 h-32 rounded-full bg-accent/5 animate-float" style={{animationDelay: '1.2s'}}></div>
+          <div className="fixed bottom-[15%] left-[12%] w-16 h-16 rounded-full bg-accent/5 animate-float" style={{animationDelay: '0.8s'}}></div>
+        </>
+      )}
     </>
   );
 };

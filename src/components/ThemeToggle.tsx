@@ -40,10 +40,10 @@ const ThemeToggle = () => {
       pressed={theme === "dark"}
       onPressedChange={toggleTheme}
       aria-label="Toggle theme"
-      className="bg-transparent hover:bg-transparent"
+      className="border border-border rounded-full p-2 bg-transparent hover:bg-transparent"
     >
       {theme === "dark" ? (
-        <Sun size={18} className="text-accent" />
+        <Sun size={18} className="text-yellow-300" />
       ) : (
         <Moon size={18} className="text-foreground" />
       )}

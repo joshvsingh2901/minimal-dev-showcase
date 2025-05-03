@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -38,32 +39,32 @@
   }
 
   .dark {
-    --background: 222 47% 11%;
+    --background: 0 0% 7%;
     --foreground: 210 40% 98%;
 
-    --card: 222 47% 11%;
+    --card: 0 0% 10%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 47% 11%;
+    --popover: 0 0% 9%;
     --popover-foreground: 210 40% 98%;
 
     --primary: 210 40% 98%;
-    --primary-foreground: 222 47% 11.2%;
+    --primary-foreground: 0 0% 7%;
 
-    --secondary: 217 32% 17%;
+    --secondary: 0 0% 15%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217 32% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 215 20% 75%;
 
-    --accent: 213 52% 40%;
+    --accent: 213 52% 60%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217 32% 17%;
-    --input: 217 32% 17%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
     --ring: 212 93% 49%;
   }
 }
@@ -78,7 +79,15 @@
   }
   
   body {
-    @apply bg-background text-foreground transition-colors duration-300;
+    @apply bg-background text-foreground transition-colors duration-300 font-poppins;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins font-semibold;
+  }
+
+  code, pre, .code {
+    @apply font-fira;
   }
 }
 
@@ -90,6 +99,7 @@
   @apply max-w-[1200px] mx-auto px-4;
 }
 
+/* Improved fade in animations */
 .fade-in-section {
   @apply opacity-0;
   animation: fade-in 0.8s ease-out forwards;
@@ -109,4 +119,111 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Text gradient effect */
+.text-gradient {
+  @apply bg-gradient-to-r from-accent via-blue-500 to-purple-500 bg-clip-text text-transparent;
+}
+
+/* Cool hover effects */
+.hover-glow {
+  @apply relative overflow-hidden transition-all duration-300;
+}
+
+.hover-glow::after {
+  content: '';
+  @apply absolute inset-0 opacity-0 transition-opacity duration-300 rounded-md pointer-events-none;
+  box-shadow: 0 0 15px 5px theme('colors.accent.DEFAULT');
+}
+
+.hover-glow:hover::after {
+  @apply opacity-50;
+}
+
+/* Typing animation */
+.typing-animation {
+  border-right: 2px solid theme('colors.accent.DEFAULT');
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 4s steps(40) infinite, blink 1s step-end infinite;
+}
+
+@keyframes typing {
+  0%, 100% { width: 0 }
+  50%, 90% { width: 100% }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: theme('colors.accent.DEFAULT') }
+}
+
+/* 3D card effect */
+.card-3d {
+  @apply transition-transform duration-300 ease-out;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.card-3d:hover {
+  transform: translateY(-5px) rotateX(5deg);
+}
+
+/* Floating animation */
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Glass morphism effect */
+.glass {
+  @apply backdrop-blur-lg bg-white/10 border border-white/20;
+}
+
+.dark .glass {
+  @apply bg-black/30 border-white/10;
+}
+
+/* Loading screen styles */
+.loading-screen {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-background;
+  animation: fadeOut 0.5s ease-in-out 2s forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; visibility: hidden; }
+}
+
+.loading-icon {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.loading-icon .code-part {
+  @apply absolute left-0 top-0 w-[40px] h-[80px] border-4 border-accent;
+  animation: codeAnim 2s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%, 0 70%);
+}
+
+.loading-icon .business-part {
+  @apply absolute right-0 top-0 w-[80px] h-[80px] border-4 border-accent;
+  animation: businessAnim 2s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+@keyframes codeAnim {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(-10px); opacity: 0.7; }
+}
+
+@keyframes businessAnim {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(10px); opacity: 0.7; }
 }
