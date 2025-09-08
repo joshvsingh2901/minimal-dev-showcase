@@ -1,73 +1,31 @@
-# Welcome to your Lovable project
+# Joshveer.ca – Personal Website
 
-## Project info
+🌐 **Live Site:** [joshveer.ca](https://joshveer.ca)  
+📂 **Repository:** Source code for my personal website.
 
-**URL**: https://lovable.dev/projects/1089b403-c496-42e7-8bbc-ad86cd52b2c1
+---
 
-## How can I edit this code?
+## 🚀 Overview
+This is my personal website where I introduce myself and provide a central place to connect with me online.  
+The site is designed to be **clean, modern, and fully responsive**, with smooth navigation and fast load times.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 🛠️ Tech Stack
+- **Framework:** React (with Vite for fast builds)  
+- **Language:** TypeScript  
+- **UI Library:** shadcn-ui  
+- **Styling:** Tailwind CSS  
+- **Deployment:** Lovable.dev (custom domain: `joshveer.ca`)  
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1089b403-c496-42e7-8bbc-ad86cd52b2c1) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/1089b403-c496-42e7-8bbc-ad86cd52b2c1) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## ✨ Features
+- **Landing Page:** A welcoming homepage with my name, tagline, and links.  
+- **Navigation Bar:** Simple and intuitive header for moving between sections.  
+- **About Section:** Quick introduction of who I am and what I do.  
+- **Projects Section (optional placeholder):** Area to highlight selected work.  
+- **Contact Section:** Links to my GitHub, LinkedIn, and email for easy reach.  
+- **Responsive Design:** Optimized to look sharp on desktops, tablets, and mobile.  
+- **Custom Domain:** Hosted live at [joshveer.ca](https://joshveer.ca).  
+- **Fast Performance:** Built with Vite + React for quick load times and smooth user experience.  
